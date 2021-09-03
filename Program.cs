@@ -42,7 +42,7 @@ namespace ShootingDice
         static void PlayMany(List<Player> players)
         {
             Console.WriteLine();
-            Console.WriteLine("Let's play a bunch of times, shall we?");
+            Console.WriteLine("Let's play a bunch of times, shall we?!");
 
             // We "order" the players by a random number
             // This has the effect of shuffling them randomly
