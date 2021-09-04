@@ -8,32 +8,81 @@ namespace ShootingDice
     {
         static void Main(string[] args)
         {
-            Player player1 = new Player();
-            player1.Name = "Bob";
 
-            Player player2 = new Player();
-            player2.Name = "Sue";
+            Console.WriteLine($@"
+            Let's play a game of shooting dice!");
+          // instantiating new SmackTalkingPlayer subclass to create object that inherits attributes of the Player base class:
+            Player player1 = new SmackTalkingPlayer();
+            player1.Name = "Luke";
+
+            // instantiating new OneHigherPlayer subclass to create object that inherits attributes of the Player base class:
+            Player player2 = new OneHigherPlayer();
+            player2.Name = "Gabe";
 
             player2.Play(player1);
 
             Console.WriteLine("-------------------");
 
-            Player player3 = new Player();
-            player3.Name = "Wilma";
+            // instantiating new HumanPlayer subclass to create object that inherits attributes of the Player base class:
+            Player player3 = new HumanPlayer();
+            player3.Name = "Luz (Human Player)";
 
             player3.Play(player2);
 
             Console.WriteLine("-------------------");
 
             Player large = new LargeDicePlayer();
-            large.Name = "Bigun Rollsalot";
+            large.Name = "Harry Potter";
 
             player1.Play(large);
 
             Console.WriteLine("-------------------");
 
+            // instantiating new SmackTalkingPlayer subclass to create object that inherits attributes of the Player base class:
+            Player smackTalker = new SmackTalkingPlayer { Name = "Tom Holland"};
+
+            smackTalker.Play(player3);
+
+            Console.WriteLine("-------------------");
+
+            // instantiating new OneHigherPlayer subclass to create object that inherits attributes of the Player base class:
+            Player higherPlayer = new OneHigherPlayer { Name = "Brad Pitt"};
+
+            higherPlayer.Play(player2);
+
+            Console.WriteLine("-------------------");
+
+            // instantiating new CreativeSmackTalkingPlayer subclass to create object that inherits attributes of the Player base class:
+            Player creativeSmackTalker = new CreativeSmackTalkingPlayer { Name = "Hercules"};
+
+            creativeSmackTalker.Play(large);
+
+            Console.WriteLine("-------------------");
+
+            // instantiating new SoreLoserPlayer subclass to create object that inherits attributes of the Player base class:
+            Player soreLoser = new SoreLoserPlayer { Name = "Obama"};
+
+            soreLoser.Play(creativeSmackTalker);
+
+            Console.WriteLine("-------------------");
+
+            // instantiating new UpperHalfPlayer subclass to create object that inherits attributes of the Player base class:
+            Player upperHalf = new UpperHalfPlayer { Name = "Henry Calvin"};
+
+            upperHalf.Play(soreLoser);
+
+            Console.WriteLine("-------------------");
+
+            // instantiating new SoreLoserUpperHalfPlayer subclass to create object that inherits attributes of the Player base class:
+            Player upperHalfSoreLoser = new SoreLoserUpperHalfPlayer { Name = "James Bond"};
+
+            upperHalfSoreLoser.Play(upperHalf);
+
+
+            Console.WriteLine("-------------------");
+
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large
+                player1, player2, player3, large, smacktalker, higherPlayer, creativeSmackTalker, soreLoser, upperHalf, upperHalfLoser
             };
 
             PlayMany(players);
