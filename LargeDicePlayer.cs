@@ -5,7 +5,7 @@ namespace ShootingDice
     {
         public LargeDicePlayer()
         {
-            DiceSize = 20;
+            DiceSize = 30;
         }
     }
 }
